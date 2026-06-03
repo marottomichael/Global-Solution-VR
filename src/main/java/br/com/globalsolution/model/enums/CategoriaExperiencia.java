@@ -1,0 +1,10 @@
+package br.com.globalsolution.model.enums;
+
+public enum CategoriaExperiencia {
+    CONSCIENTIZACAO_CLIMATICA,
+    RECONSTRUCAO_HISTORICA,
+    CENARIO_FUTURO,
+    EVENTO_ESPACIAL,
+    TRANSFORMACAO_URBANA,
+    EXPERIENCIA_LIVRE
+}

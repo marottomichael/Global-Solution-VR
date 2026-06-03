@@ -1,0 +1,177 @@
+# Global Solution — testes manuais da API
+# Requisitos: aplicação rodando em http://localhost:8081
+# Execute na ordem. Ajuste usuarioId, fontesDadosIds e solicitacaoId conforme as respostas.
+
+@baseUrl = http://localhost:8081
+
+### 1. Criar usuario
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Ana Silva",
+  "email": "ana.silva@email.com",
+  "senha": "123456",
+  "tipoUsuario": "VISITANTE"
+}
+
+### 2. Criar fonte climatica
+POST {{baseUrl}}/fontes-dados
+Content-Type: application/json
+
+{
+  "nome": "Dados climaticos IPCC",
+  "tipoFonte": "BASE_CLIMATICA",
+  "descricao": "Referencia simulada para projecoes climaticas",
+  "urlReferencia": "https://exemplo.org/ipcc",
+  "confiabilidadeBase": 85
+}
+
+### 3. Criar fonte historica (alternativa: tipoFonte REGISTRO_GEOGRAFICO para fonte geoespacial)
+POST {{baseUrl}}/fontes-dados
+Content-Type: application/json
+
+{
+  "nome": "Mapa historico SP",
+  "tipoFonte": "IMAGEM_HISTORICA",
+  "descricao": "Imagens de arquivo municipal",
+  "confiabilidadeBase": 72
+}
+
+### 4. Solicitacao climatica — CONSCIENTIZACAO_CLIMATICA
+POST {{baseUrl}}/solicitacoes
+Content-Type: application/json
+
+{
+  "usuarioId": 1,
+  "localizacao": {
+    "nomeReferencia": "Orla de Santos",
+    "latitude": -23.9608,
+    "longitude": -46.3332,
+    "pais": "Brasil",
+    "cidade": "Santos",
+    "descricao": "Regiao costeira sujeita a elevacao do nivel do mar"
+  },
+  "titulo": "Impacto do aumento do nivel do mar",
+  "descricaoUsuario": "Visualizar como a regiao ficaria com 2 metros a mais de mar",
+  "categoriaExperiencia": "CONSCIENTIZACAO_CLIMATICA",
+  "tipoTemporal": "FUTURO",
+  "anoReferencia": 2100,
+  "nivelDetalhamento": "ALTO",
+  "parametros": [
+    {
+      "nome": "aumento_nivel_mar",
+      "valor": "2",
+      "unidade": "metros",
+      "tipoParametro": "NUMERICO"
+    }
+  ],
+  "fontesDadosIds": [1]
+}
+
+### 5. Solicitacao historica — RECONSTRUCAO_HISTORICA
+POST {{baseUrl}}/solicitacoes
+Content-Type: application/json
+
+{
+  "usuarioId": 1,
+  "localizacao": {
+    "nomeReferencia": "Centro de Sao Paulo",
+    "latitude": -23.5505,
+    "longitude": -46.6333,
+    "cidade": "Sao Paulo"
+  },
+  "titulo": "Sao Paulo no seculo XIX",
+  "descricaoUsuario": "Mostrar como era a regiao central ha cerca de 200 anos",
+  "categoriaExperiencia": "RECONSTRUCAO_HISTORICA",
+  "tipoTemporal": "PASSADO",
+  "anoReferencia": 1825,
+  "nivelDetalhamento": "MEDIO",
+  "parametros": [
+    {
+      "nome": "deslocamento_temporal",
+      "valor": "200",
+      "unidade": "anos_atras",
+      "tipoParametro": "NUMERICO"
+    }
+  ],
+  "fontesDadosIds": [2]
+}
+
+### 6. Buscar solicitacao por id
+GET {{baseUrl}}/solicitacoes/1
+
+### 7. Listar solicitacoes por usuario
+GET {{baseUrl}}/solicitacoes/usuario/1
+
+### 8. Listar por categoria (opcional)
+GET {{baseUrl}}/solicitacoes/categoria/CONSCIENTIZACAO_CLIMATICA
+
+### 9. Criar avaliacao
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+
+{
+  "usuarioId": 1,
+  "solicitacaoId": 1,
+  "nota": 5,
+  "comentario": "Experiencia muito didatica e visualmente impactante"
+}
+
+### 10. Listar avaliacoes da solicitacao (opcional)
+GET {{baseUrl}}/avaliacoes/solicitacao/1
+
+### 11. Estatisticas
+GET {{baseUrl}}/estatisticas
+
+### 12. Atualizar usuario
+PUT {{baseUrl}}/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Ana Silva Atualizada",
+  "email": "ana.silva@email.com",
+  "senha": "123456",
+  "tipoUsuario": "USUARIO"
+}
+
+### 13. Atualizar fonte de dados
+PUT {{baseUrl}}/fontes-dados/1
+Content-Type: application/json
+
+{
+  "nome": "Dados climaticos IPCC v2",
+  "tipoFonte": "BASE_CLIMATICA",
+  "descricao": "Referencia atualizada",
+  "urlReferencia": "https://exemplo.org/ipcc",
+  "confiabilidadeBase": 90
+}
+
+### 14. Atualizar status da solicitacao
+PATCH {{baseUrl}}/solicitacoes/1/status/ERRO
+
+### 15. Criar usuario temporario para teste de delete
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Usuario Temp",
+  "email": "temp.delete@email.com",
+  "senha": "123456"
+}
+
+### 16. Excluir usuario sem vinculos (ajuste id conforme resposta do passo 15)
+DELETE {{baseUrl}}/usuarios/3
+
+### 17. Criar fonte temporaria para teste de delete
+POST {{baseUrl}}/fontes-dados
+Content-Type: application/json
+
+{
+  "nome": "Fonte Temp",
+  "tipoFonte": "DOCUMENTO",
+  "confiabilidadeBase": 60
+}
+
+### 18. Excluir fonte sem vinculos (ajuste id conforme resposta do passo 17)
+DELETE {{baseUrl}}/fontes-dados/3

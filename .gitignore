@@ -1,8 +1,14 @@
-target/
+# Backend (Maven)
+memora-backend/target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# IDE
 .idea/
 *.iml
 *.ipr
@@ -12,11 +18,12 @@ target/
 .settings/
 .vscode/
 
-*.class
-*.log
-*.jar
-*.war
-*.ear
-
+# OS & logs
 .DS_Store
 Thumbs.db
+*.log
+*.class
+
+# Env local (raiz)
+.env
+.env.local

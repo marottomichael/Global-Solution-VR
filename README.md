@@ -1,119 +1,85 @@
-# Global Solution
+# MEMORA — Global Solution
 
-Backend de uma plataforma de experiências imersivas sob demanda. O usuário informa localização, categoria, descrição e parâmetros flexíveis; o sistema registra a solicitação, simula o processamento e retorna um resultado conceitual com métricas.
+Plataforma de conscientização climática (MEMORA) com experiências imersivas sob demanda. Frontend em Vite e API REST em Spring Boot.
 
-**Importante:** neste protótipo, IA generativa, satélites, mapas reais e modelos 3D são **simulados**. Não há integração com serviços externos.
+**Protótipo:** IA, satélites e mapas reais são simulados nesta versão.
+
+## Estrutura do repositório
+
+```
+Global-Solution-VR/
+├── frontend/                 # UI MEMORA — npm install aqui
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── index.html
+│   └── src/
+├── memora-backend/           # API Spring Boot
+│   ├── pom.xml
+│   ├── mvnw.cmd
+│   ├── requests/
+│   └── src/main/java/...
+├── docs/
+├── docker-compose.yml
+├── DEV_SETUP_GUIDE.md        # Passo a passo completo
+└── .env.example
+```
+
+## Início rápido
+
+```powershell
+# 1. MySQL (opcional)
+docker compose up -d
+
+# 2. Backend
+cd memora-backend
+.\mvnw.cmd spring-boot:run
+
+# 3. Frontend (outro terminal)
+cd frontend
+copy .env.example .env
+npm install
+npm run dev
+```
+
+- Interface (dev): http://localhost:5173  
+- API: http://localhost:8081  
+
+Detalhes: [DEV_SETUP_GUIDE.md](DEV_SETUP_GUIDE.md)
 
 ## Tecnologias
 
-- Java 17
-- Spring Boot 3.4
-- Spring Web, Spring Data JPA, Bean Validation
-- MySQL 8
-- Maven Wrapper (`mvnw.cmd`)
-
-## Pré-requisitos
-
-- JDK 17 ou superior
-- MySQL rodando em `localhost:3306`
-
-## Configuração do MySQL
-
-1. Instale e inicie o MySQL Server.
-2. Ajuste, se necessário, `src/main/resources/application.properties`:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/global_solution?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo
-spring.datasource.username=root
-spring.datasource.password=SUA_SENHA
-server.port=8081
-```
-
-O banco `global_solution` é criado automaticamente na primeira conexão.
-
-## Como executar
-
-```powershell
-cd c:\Projetos\Global-Solution-VR
-.\mvnw.cmd clean install
-.\mvnw.cmd spring-boot:run
-```
-
-A API fica disponível em **http://localhost:8081**.
-
-## Base URL
-
-```
-http://localhost:8081
-```
+| Camada | Stack |
+|--------|--------|
+| Frontend | Vite 6, JavaScript ES modules, CSS |
+| Backend | Java 17, Spring Boot 3.4, JPA, MySQL 8 |
 
 ## Endpoints principais
 
 | Recurso | Método | Rota |
 |---------|--------|------|
-| Usuários | POST | `/usuarios` |
-| Usuários | GET | `/usuarios`, `/usuarios/{id}` |
-| Usuários | PUT | `/usuarios/{id}` |
-| Usuários | DELETE | `/usuarios/{id}` |
-| Fontes de dados | POST | `/fontes-dados` |
-| Fontes de dados | GET | `/fontes-dados`, `/fontes-dados/{id}`, `/fontes-dados/tipo/{tipoFonte}` |
-| Fontes de dados | PUT | `/fontes-dados/{id}` |
-| Fontes de dados | DELETE | `/fontes-dados/{id}` |
-| Solicitações | POST | `/solicitacoes` |
-| Solicitações | GET | `/solicitacoes/{id}`, `/solicitacoes/usuario/{usuarioId}`, `/solicitacoes/categoria/{categoria}`, `/solicitacoes/status/{status}` |
-| Solicitações | PATCH | `/solicitacoes/{id}/status/{status}` |
-| Avaliações | POST | `/avaliacoes` |
-| Avaliações | GET | `/avaliacoes/solicitacao/{id}`, `/avaliacoes/usuario/{id}` |
+| Usuários | POST/GET/PUT/DELETE | `/usuarios` |
+| Fontes de dados | CRUD | `/fontes-dados` |
+| Solicitações | POST/GET/PATCH | `/solicitacoes` |
+| Avaliações | POST/GET | `/avaliacoes` |
 | Estatísticas | GET | `/estatisticas` |
 
-## Fluxo principal (demonstração)
+Testes HTTP: `memora-backend/requests/global-solution.http`
 
-1. Criar usuário
-2. Cadastrar fontes de dados
-3. Criar solicitação de experiência (climática ou histórica)
-4. Consultar solicitação — retorna status `CONCLUIDA`, prompt, resultado e métricas
-5. Registrar avaliação
-6. Consultar estatísticas gerais
+## Documentação
 
-Solicitações são mantidas como **histórico** — não há exclusão física. Apenas o status pode ser atualizado via PATCH.
-
-## CRUD e persistência
-
-| Operação | Recursos |
-|----------|----------|
-| Create | POST em usuarios, fontes-dados, solicitacoes, avaliacoes |
-| Read | GET nos endpoints listados acima |
-| Update | PUT em usuarios e fontes-dados; PATCH de status em solicitacoes |
-| Delete | DELETE em usuarios e fontes-dados (sem vínculos) |
-
-Repositórios Spring Data JPA substituem DAOs manuais. Scripts SQL para documentação e demonstração:
-
-- `docs/sql/schema.sql` — criação das tabelas
-- `docs/sql/seed.sql` — dados de exemplo
-- `docs/sql/consultas-demonstracao.sql` — consultas analíticas
-
-## Testes manuais
-
-Use o arquivo `requests/global-solution.http` com a extensão **REST Client** (VS Code/Cursor) ou importe os payloads no Postman/Insomnia.
-
-Execute as requisições **na ordem** e ajuste os IDs (`usuarioId`, `fontesDadosIds`, `solicitacaoId`) conforme as respostas anteriores.
-
-## Documentação complementar
-
+- [Guia de desenvolvimento](DEV_SETUP_GUIDE.md)
+- [Arquitetura do projeto](docs/project-architecture.md)
 - [Arquitetura do backend](docs/arquitetura-backend.md)
-- [DER do banco](docs/der-banco.md)
-- [Modelagem do banco](docs/modelagem-banco.md)
+- [Frontend](frontend/README.md)
 - [Scripts SQL](docs/sql/)
-- [Roteiro do vídeo técnico](docs/roteiro-video-tecnico.md)
 
-## Estrutura do projeto
+## Build para demonstração (um único servidor)
 
+```powershell
+cd frontend
+npm run build
+cd ..\memora-backend
+.\mvnw.cmd spring-boot:run
 ```
-src/main/java/br/com/globalsolution/
-├── controller/     # Endpoints REST
-├── service/        # Regras de negócio
-├── repository/     # Acesso a dados (JPA)
-├── model/          # Entidades e enums
-├── dto/            # Request e response
-└── exception/      # Tratamento global de erros
-```
+
+Acesse http://localhost:8081 — UI + API no mesmo processo.

@@ -1,0 +1,55 @@
+:root {
+    /* MEMORA — paleta espacial */
+    --color-bg: #071426;
+    --color-bg-elevated: #0a1d35;
+    --color-bg-card: rgba(15, 76, 129, 0.12);
+    --color-bg-glass: rgba(15, 76, 129, 0.18);
+    --color-border: rgba(0, 212, 255, 0.15);
+    --color-border-strong: rgba(123, 97, 255, 0.35);
+    --color-text: #F5F9FF;
+    --color-text-muted: rgba(245, 249, 255, 0.62);
+    --color-space-blue: #0F4C81;
+    --color-cyan: #00D4FF;
+    --color-cosmic-purple: #7B61FF;
+    --color-accent: #00D4FF;
+    --color-accent-soft: #5ee9ff;
+    --color-accent-alt: #7B61FF;
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-error: #f87171;
+    --color-danger: #ff6b4a;
+
+    --font-sans: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+    --font-display: "Orbitron", "Space Grotesk", sans-serif;
+    --font-mono: "IBM Plex Mono", "Cascadia Code", monospace;
+
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4.5rem;
+    --space-4xl: 6rem;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
+    --shadow-glow-purple: 0 0 32px rgba(123, 97, 255, 0.2);
+
+    --glass-blur: blur(16px);
+    --glass-border: 1px solid rgba(0, 212, 255, 0.2);
+
+    --container-max: 1200px;
+    --header-height: 72px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-fast: 0.2s var(--ease-out);
+    --transition-med: 0.35s var(--ease-out);
+    --transition-slow: 0.6s var(--ease-out);
+}

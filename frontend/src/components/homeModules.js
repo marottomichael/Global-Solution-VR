@@ -8,20 +8,22 @@ export function renderHomeModules(container) {
 
     container.innerHTML = '';
 
-    HOME_MODULES.forEach((mod, index) => {
+    HOME_MODULES.forEach((mod) => {
         const card = document.createElement('button');
         card.type = 'button';
-        card.className = 'glass-card module-card reveal-card';
+        card.className = 'visual-card module-card reveal-card';
         card.dataset.moduleNav = mod.view;
-
-        const iconClass = index % 2 === 1 ? 'module-card__icon module-card__icon--purple' : 'module-card__icon';
+        card.style.backgroundImage = `url("${mod.image}")`;
 
         card.innerHTML = `
-            <span class="module-card__tag">${mod.tag}</span>
-            <div class="${iconClass}">${mod.icon}</div>
-            <h3>${mod.title}</h3>
-            <p>${mod.description}</p>
-            <span class="module-card__arrow" aria-hidden="true">→</span>
+            <span class="visual-card__overlay" aria-hidden="true"></span>
+            <span class="visual-card__glow" aria-hidden="true"></span>
+            <span class="visual-card__content">
+                <span class="module-card__tag">${mod.tag}</span>
+                <h3>${mod.title}</h3>
+                <p>${mod.description}</p>
+                <span class="module-card__arrow" aria-hidden="true">→</span>
+            </span>
         `;
 
         card.addEventListener('click', () => navigateTo(mod.view));

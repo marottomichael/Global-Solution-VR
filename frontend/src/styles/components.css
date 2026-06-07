@@ -21,6 +21,97 @@
     margin-bottom: var(--space-sm);
 }
 
+/* Visual cards — imagem de fundo + glass */
+.visual-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: var(--glass-border);
+    background-color: var(--color-bg);
+    background-size: cover;
+    background-position: center;
+    min-height: 220px;
+    padding: 0;
+    text-align: left;
+    transition: transform var(--transition-med), border-color var(--transition-med),
+        box-shadow var(--transition-med);
+}
+
+.visual-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 212, 255, 0.45);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.visual-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(7, 20, 38, 0.25) 0%,
+        rgba(7, 20, 38, 0.72) 55%,
+        rgba(7, 20, 38, 0.92) 100%
+    );
+    transition: background var(--transition-med);
+}
+
+.visual-card:hover .visual-card__overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(7, 20, 38, 0.15) 0%,
+        rgba(7, 20, 38, 0.65) 50%,
+        rgba(7, 20, 38, 0.88) 100%
+    );
+}
+
+.visual-card__overlay--news {
+    background: linear-gradient(
+        180deg,
+        rgba(7, 20, 38, 0.1) 0%,
+        rgba(7, 20, 38, 0.55) 40%,
+        rgba(7, 20, 38, 0.95) 100%
+    );
+}
+
+.visual-card__glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle at 50% 80%, rgba(0, 212, 255, 0.2), transparent 55%);
+    opacity: 0;
+    transition: opacity var(--transition-med);
+    pointer-events: none;
+}
+
+.visual-card:hover .visual-card__glow {
+    opacity: 1;
+}
+
+.visual-card__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 220px;
+    padding: var(--space-lg);
+}
+
+.visual-card__content--scenario {
+    min-height: 200px;
+}
+
+.visual-card__content h3 {
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.visual-card__content p {
+    color: rgba(245, 249, 255, 0.82);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 /* Module cards (home) */
 .module-card {
     position: relative;
@@ -30,37 +121,11 @@
     width: 100%;
     font: inherit;
     color: inherit;
+    min-height: 280px;
 }
 
-.module-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, transparent 40%, rgba(0, 212, 255, 0.06) 100%);
-    opacity: 0;
-    transition: opacity var(--transition-med);
-}
-
-.module-card:hover::before {
-    opacity: 1;
-}
-
-.module-card__icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-md);
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid var(--color-border);
-    margin-bottom: var(--space-md);
-    font-size: 1.5rem;
-}
-
-.module-card__icon--purple {
-    background: rgba(123, 97, 255, 0.12);
-    border-color: rgba(123, 97, 255, 0.3);
+.module-card.visual-card {
+    background-color: var(--color-bg-elevated);
 }
 
 .module-card__tag {
@@ -96,14 +161,28 @@
     color: inherit;
 }
 
+.scenario-card--visual {
+    padding: 0;
+    min-height: 200px;
+    background-color: var(--color-bg);
+}
+
+.scenario-card--visual.glass-card {
+    background-color: var(--color-bg);
+}
+
 .scenario-card.is-selected {
     border-color: var(--color-cyan);
     box-shadow: var(--shadow-glow), inset 0 0 0 1px rgba(0, 212, 255, 0.2);
 }
 
-.scenario-card__emoji {
-    font-size: 2rem;
-    margin-bottom: var(--space-sm);
+.scenario-card.is-selected .visual-card__overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 212, 255, 0.12) 0%,
+        rgba(7, 20, 38, 0.75) 50%,
+        rgba(7, 20, 38, 0.92) 100%
+    );
 }
 
 .scenario-card__meta {
@@ -486,4 +565,58 @@
 .reveal-card.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* News cards — portal digital */
+.news-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    border: var(--glass-border);
+    min-height: 340px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform var(--transition-med), box-shadow var(--transition-med),
+        border-color var(--transition-med);
+}
+
+.news-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: var(--shadow-md), 0 0 40px rgba(0, 212, 255, 0.15);
+}
+
+.news-card__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 340px;
+    padding: var(--space-xl);
+}
+
+.news-card__category {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-cyan);
+    margin-bottom: var(--space-sm);
+}
+
+.news-card__title {
+    font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+    color: var(--color-text);
+    line-height: 1.25;
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65);
+}
+
+.news-card__subtitle {
+    color: rgba(245, 249, 255, 0.78);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    max-width: 48ch;
 }

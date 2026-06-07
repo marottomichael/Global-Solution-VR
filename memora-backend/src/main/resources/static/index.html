@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Orbitron:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-zpDPwW18.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DYw06IEF.css">
+  <script type="module" crossorigin src="/assets/index-T5FFsqWC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DkjKYeLB.css">
 </head>
 <body>
     <div class="app-shell">
@@ -17,7 +17,7 @@
             <div class="container header-inner">
                 <a href="#" class="brand" data-nav-view="view-home" aria-label="MEMORA — Início">
                     <span class="brand__logo" aria-hidden="true"></span>
-                    MEM<span>ORA</span>
+                    <span class="brand__name">MEMORA</span>
                 </a>
                 <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menu">
                     <span></span><span></span><span></span>
@@ -38,23 +38,26 @@
         <div id="view-home" class="view is-active">
             <section class="hero" id="inicio">
                 <div class="hero__bg" aria-hidden="true">
-                    <div class="hero__stars"></div>
-                    <div class="earth-scene">
-                        <div class="earth-scene__orbit">
-                            <div class="earth-globe"></div>
-                            <div class="earth-scene__ring"></div>
-                        </div>
-                    </div>
+                    <video
+                        class="hero__video"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="/images/planeta terra.jpg"
+                        data-hero-video
+                    >
+                        <source data-hero-source type="video/mp4">
+                    </video>
+                    <div class="hero__overlay"></div>
+                    <div class="hero__fade"></div>
                 </div>
-                <div class="container hero__content">
-                    <p class="hero__eyebrow">Conscientização climática · Digital Twin</p>
-                    <h1>MEMORA</h1>
-                    <p class="hero__tagline">
-                        A <em>memória do planeta</em> para construir o futuro.
-                    </p>
+                <div class="container hero__content hero__content--center">
+                    <h1 class="hero__title">MEMORA</h1>
+                    <p class="hero__tagline">A memória do planeta para construir o futuro.</p>
                     <div class="hero-actions">
                         <button type="button" class="btn btn-primary" data-nav-view="view-clima">Explorar Transformações</button>
-                        <button type="button" class="btn btn-secondary" data-scroll="#casos-reais">Ver Casos Reais</button>
+                        <button type="button" class="btn btn-secondary" data-scroll="#noticias">Ver Casos Reais</button>
                     </div>
                     <div class="hero__metrics">
                         <div class="hero__metric"><strong>4</strong>módulos imersivos</div>
@@ -97,7 +100,7 @@
                         <p class="section-eyebrow">Módulos</p>
                         <h2>Explore o planeta em quatro dimensões</h2>
                     </header>
-                    <div class="grid-4" id="home-modules" data-home-modules></div>
+                    <div class="grid-modules" id="home-modules" data-home-modules></div>
                 </div>
             </section>
 
@@ -130,6 +133,17 @@
                 </div>
             </section>
 
+            <section class="news-section section" id="noticias">
+                <div class="container">
+                    <header class="section-header section-header--left">
+                        <p class="section-eyebrow">Notícias e eventos reais</p>
+                        <h2>A dor que o MEMORA existe para endereçar</h2>
+                        <p>Eventos climáticos e ambientais documentados em escala global — a urgência por memória, dados e ação.</p>
+                    </header>
+                    <div class="grid-news" data-news-section></div>
+                </div>
+            </section>
+
             <section class="api-strip section">
                 <div class="container glass-card">
                     <p>API Spring Boot · <code>localhost:8081</code> · Endpoints: <code>/solicitacoes</code> <code>/estatisticas</code> <code>/avaliacoes</code></p>
@@ -153,7 +167,7 @@
                 <header class="section-header section-header--left" style="margin-bottom: 1.5rem">
                     <h2>Selecione um cenário</h2>
                 </header>
-                <div class="grid-4" data-scenarios></div>
+                <div class="scenario-grid" data-scenarios></div>
                 <div class="workspace__empty" data-workspace-empty>
                     <div class="workspace__empty-icon">🛰️</div>
                     <p>Selecione um card acima para abrir a linha do tempo e o mapa interativo.</p>
@@ -196,7 +210,7 @@
                 </div>
             </div>
             <div class="workspace container" data-module="patrimonio">
-                <div class="grid-3" data-scenarios></div>
+                <div class="scenario-grid" data-scenarios></div>
                 <div class="workspace__empty" data-workspace-empty>
                     <div class="workspace__empty-icon">🏛️</div>
                     <p>Escolha um patrimônio para explorar sua linha do tempo digital.</p>
@@ -233,7 +247,7 @@
                 </div>
             </div>
             <div class="workspace container" data-module="simulacoes">
-                <div class="grid-3" data-scenarios></div>
+                <div class="scenario-grid" data-scenarios></div>
                 <div class="workspace__empty" data-workspace-empty>
                     <div class="workspace__empty-icon">⚡</div>
                     <p>Selecione um desastre para iniciar a simulação temporal.</p>

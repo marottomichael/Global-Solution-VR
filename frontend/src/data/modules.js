@@ -3,6 +3,8 @@
  * Preparado para substituição por respostas da API Spring Boot.
  */
 
+import { IMAGES } from './assets.js';
+
 export const MODULES = {
     clima: {
         id: 'clima',
@@ -14,7 +16,7 @@ export const MODULES = {
         scenarios: [
             {
                 id: 'amazonia',
-                emoji: '🌎',
+                image: IMAGES.amazoniaDesmatada,
                 title: 'Amazônia',
                 region: 'Amazônia Legal',
                 coords: { lat: '-3.4653', lng: '-62.2159', x: 42, y: 48 },
@@ -47,8 +49,8 @@ export const MODULES = {
             },
             {
                 id: 'enchente-rs',
-                emoji: '🌊',
-                title: 'Enchente RS',
+                image: IMAGES.enchentesRs,
+                title: 'Enchentes RS',
                 region: 'Rio Grande do Sul',
                 coords: { lat: '-30.0346', lng: '-51.2177', x: 68, y: 72 },
                 timeline: {
@@ -60,7 +62,7 @@ export const MODULES = {
             },
             {
                 id: 'queimadas',
-                emoji: '🔥',
+                image: IMAGES.incendioFlorestal,
                 title: 'Queimadas',
                 region: 'Pantanal & Cerrado',
                 coords: { lat: '-17.7833', lng: '-57.4167', x: 55, y: 58 },
@@ -73,7 +75,7 @@ export const MODULES = {
             },
             {
                 id: 'degelo',
-                emoji: '🧊',
+                image: IMAGES.degelo,
                 title: 'Degelo',
                 region: 'Antártica / Groenlândia',
                 coords: { lat: '-75.2500', lng: '-0.0750', x: 78, y: 22 },
@@ -96,7 +98,7 @@ export const MODULES = {
         scenarios: [
             {
                 id: 'museu-nacional',
-                emoji: '🏛️',
+                image: IMAGES.museuChamas,
                 title: 'Museu Nacional',
                 region: 'Rio de Janeiro, Brasil',
                 coords: { lat: '-22.9064', lng: '-43.1729', x: 72, y: 55 },
@@ -109,7 +111,7 @@ export const MODULES = {
             },
             {
                 id: 'palmyra',
-                emoji: '🕌',
+                image: IMAGES.palmyra,
                 title: 'Palmyra',
                 region: 'Síria',
                 coords: { lat: '34.5560', lng: '38.2739', x: 58, y: 38 },
@@ -122,7 +124,7 @@ export const MODULES = {
             },
             {
                 id: 'machu-picchu',
-                emoji: '⛰️',
+                image: IMAGES.machuPicchu,
                 title: 'Machu Picchu',
                 region: 'Peru',
                 coords: { lat: '-13.1631', lng: '-72.5450', x: 38, y: 52 },
@@ -145,7 +147,7 @@ export const MODULES = {
         scenarios: [
             {
                 id: 'rs-2024',
-                emoji: '🌊',
+                image: IMAGES.enchentesRs,
                 title: 'RS 2024',
                 region: 'Enchentes no Rio Grande do Sul',
                 coords: { lat: '-30.0346', lng: '-51.2177', x: 68, y: 72 },
@@ -158,7 +160,7 @@ export const MODULES = {
             },
             {
                 id: 'katrina',
-                emoji: '🌀',
+                image: IMAGES.furacao,
                 title: 'Furacão Katrina',
                 region: 'Nova Orleans, EUA',
                 coords: { lat: '29.9511', lng: '-90.0715', x: 28, y: 45 },
@@ -171,7 +173,7 @@ export const MODULES = {
             },
             {
                 id: 'brumadinho',
-                emoji: '⛏️',
+                image: IMAGES.terremotos,
                 title: 'Brumadinho',
                 region: 'Minas Gerais, Brasil',
                 coords: { lat: '-20.1435', lng: '-44.1998', x: 62, y: 50 },
@@ -239,10 +241,10 @@ export const MODULES = {
 };
 
 export const HOME_MODULES = [
-    { id: 'clima', title: 'Memória Climática', description: 'Transformações ambientais via satélite e comparação temporal.', tag: 'Principal', icon: '🌐', view: 'view-clima' },
-    { id: 'patrimonio', title: 'Patrimônio Digital', description: 'Reconstrução imersiva de patrimônio cultural ameaçado.', tag: 'Heritage', icon: '🏛️', view: 'view-patrimonio' },
-    { id: 'simulacoes', title: 'Simulações de Desastres', description: 'Eventos extremos em experiências imersivas educativas.', tag: 'Disaster', icon: '⚡', view: 'view-simulacoes' },
-    { id: 'labs', title: 'Memora Labs', description: 'Cenários hipotéticos — e se o planeta fosse diferente?', tag: 'What-if', icon: '🔬', view: 'view-labs' }
+    { id: 'clima', title: 'Memória Climática', description: 'Transformações ambientais via satélite e comparação temporal.', tag: 'Principal', image: IMAGES.amazoniaAntes, view: 'view-clima' },
+    { id: 'patrimonio', title: 'Patrimônio Digital', description: 'Reconstrução imersiva de patrimônio cultural ameaçado.', tag: 'Heritage', image: IMAGES.museuNacional, view: 'view-patrimonio' },
+    { id: 'simulacoes', title: 'Simulações de Desastres', description: 'Eventos extremos em experiências imersivas educativas.', tag: 'Disaster', image: IMAGES.enchentes, view: 'view-simulacoes' },
+    { id: 'labs', title: 'Memora Labs', description: 'Cenários hipotéticos — e se o planeta fosse diferente?', tag: 'What-if', image: IMAGES.planetaTerra, view: 'view-labs' }
 ];
 
 export const ENV_METRICS_DEMO = [

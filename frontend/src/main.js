@@ -15,6 +15,8 @@ import { renderHomeModules } from './components/homeModules.js';
 import { renderEnvDashboard } from './components/dashboard.js';
 import { setupScrollReveal } from './components/scrollReveal.js';
 import { initModuleView } from './components/moduleView.js';
+import { renderNewsSection } from './components/newsSection.js';
+import { VIDEOS, IMAGES } from './data/assets.js';
 
 function setupScrollLinks() {
     document.querySelectorAll('[data-scroll]').forEach((element) => {
@@ -62,7 +64,20 @@ async function loadEstatisticas() {
     }
 }
 
+function setupHeroVideo() {
+    const video = document.querySelector('[data-hero-video]');
+    const source = document.querySelector('[data-hero-source]');
+    if (!video || !source) {
+        return;
+    }
+
+    source.src = VIDEOS.earthHero;
+    video.poster = IMAGES.planetaTerra;
+    video.load();
+}
+
 function init() {
+    setupHeroVideo();
     setupRouter();
     setupNavbar();
     setupScrollLinks();
@@ -70,6 +85,7 @@ function init() {
     setupCasePills();
 
     renderHomeModules(document.querySelector('[data-home-modules]'));
+    renderNewsSection(document.querySelector('[data-news-section]'));
     renderEnvDashboard(document.querySelector('[data-env-dashboard]'));
 
     ['clima', 'patrimonio', 'simulacoes', 'labs'].forEach(initModuleView);

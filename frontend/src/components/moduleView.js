@@ -4,6 +4,7 @@ import { renderTimeline } from './timeline.js';
 import { renderMapPanel } from './mapPanel.js';
 
 const moduleInstances = new Map();
+const VISUAL_MODULES = new Set(['clima', 'patrimonio', 'simulacoes']);
 
 function buildScenarioCard(scenario, moduleId, isLab) {
     const card = document.createElement('button');
@@ -18,9 +19,19 @@ function buildScenarioCard(scenario, moduleId, isLab) {
             <p class="lab-card__hint">${scenario.hint || scenario.region}</p>
             <span class="scenario-card__meta">Explorar cenário →</span>
         `;
+    } else if (VISUAL_MODULES.has(moduleId) && scenario.image) {
+        card.classList.add('visual-card', 'scenario-card--visual');
+        card.style.backgroundImage = `url("${scenario.image}")`;
+        card.innerHTML = `
+            <span class="visual-card__overlay" aria-hidden="true"></span>
+            <span class="visual-card__glow" aria-hidden="true"></span>
+            <span class="visual-card__content visual-card__content--scenario">
+                <h3>${scenario.title}</h3>
+                <p>${scenario.region}</p>
+            </span>
+        `;
     } else {
         card.innerHTML = `
-            <div class="scenario-card__emoji">${scenario.emoji}</div>
             <h3>${scenario.title}</h3>
             <p>${scenario.region}</p>
             <span class="scenario-card__meta">Abrir linha do tempo</span>

@@ -121,11 +121,31 @@
     width: 100%;
     font: inherit;
     color: inherit;
-    min-height: 280px;
+    min-height: 300px;
+    box-shadow: var(--shadow-sm), 0 24px 48px rgba(0, 0, 0, 0.35);
 }
 
 .module-card.visual-card {
     background-color: var(--color-bg-elevated);
+}
+
+.module-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md), 0 32px 64px rgba(0, 0, 0, 0.45), var(--shadow-glow);
+}
+
+.module-card__content {
+    min-height: 300px;
+    padding: 0;
+}
+
+.module-card__panel {
+    position: relative;
+    padding: var(--space-lg);
+    background: rgba(7, 20, 38, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .module-card__tag {
@@ -619,4 +639,26 @@
     font-size: 0.92rem;
     line-height: 1.5;
     max-width: 48ch;
+}
+
+.news-card__cta {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-cyan);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--transition-med), transform var(--transition-med);
+}
+
+.news-card:hover .news-card__cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-card:hover .visual-card__glow {
+    opacity: 1;
 }

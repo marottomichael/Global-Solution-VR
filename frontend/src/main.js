@@ -13,9 +13,10 @@ import { obterEstatisticas } from './services/estatisticaService.js';
 import { setupNavbar } from './components/navbar.js';
 import { renderHomeModules } from './components/homeModules.js';
 import { renderEnvDashboard } from './components/dashboard.js';
-import { setupScrollReveal } from './components/scrollReveal.js';
+import { setupScrollReveal, observeRevealCards } from './components/scrollReveal.js';
 import { initModuleView } from './components/moduleView.js';
 import { renderNewsSection } from './components/newsSection.js';
+import { renderImpactCounters } from './components/impactCounters.js';
 import { VIDEOS, IMAGES } from './data/assets.js';
 
 function setupScrollLinks() {
@@ -85,7 +86,9 @@ function init() {
     setupCasePills();
 
     renderHomeModules(document.querySelector('[data-home-modules]'));
+    renderImpactCounters(document.querySelector('[data-impact-counters]'));
     renderNewsSection(document.querySelector('[data-news-section]'));
+    observeRevealCards(document.getElementById('view-home'));
     renderEnvDashboard(document.querySelector('[data-env-dashboard]'));
 
     ['clima', 'patrimonio', 'simulacoes', 'labs'].forEach(initModuleView);

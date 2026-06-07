@@ -13,6 +13,7 @@ export const VIDEOS = {
 };
 
 export const IMAGES = {
+    logoIcon: assetUrl('images', 'satelite icone.png'),
     planetaTerra: assetUrl('images', 'planeta terra.jpg'),
     amazoniaAntes: assetUrl('images', 'Amazônia antes.jpg'),
     amazoniaDesmatada: assetUrl('images', 'amazônia desmatada.jpg'),
@@ -21,6 +22,7 @@ export const IMAGES = {
     incendioFlorestal: assetUrl('images', 'incêndio florestal.jpg'),
     incendios: assetUrl('images', 'Incêndios.jpg'),
     degelo: assetUrl('images', 'Degelo.jpg'),
+    calorGlobal: assetUrl('images', 'aquecimento global desgelo.jpg'),
     furacao: assetUrl('images', 'furacao.jpg'),
     museuNacional: assetUrl('images', 'Museu Nacional.jpg'),
     museuChamas: assetUrl('images', 'MUSEU-NACIONAL em chamas.jpg'),
@@ -33,34 +35,34 @@ export const IMAGES = {
 export const NEWS_ITEMS = [
     {
         id: 'news-rs',
-        category: 'Desastre',
-        title: 'Enchentes no Rio Grande do Sul',
-        subtitle: 'Maior evento hidrológico da história recente do Brasil afeta milhões e expõe vulnerabilidade climática.',
+        category: 'Mudanças Climáticas',
+        title: 'Enchentes no Rio Grande do Sul impactam centenas de cidades',
+        subtitle: 'Eventos extremos afetaram mais de 460 municípios e deslocaram centenas de milhares de pessoas, evidenciando os desafios da adaptação climática.',
         image: IMAGES.enchentesRs,
-        view: 'view-clima'
+        view: 'view-simulacoes'
     },
     {
         id: 'news-amazonia',
-        category: 'Clima',
-        title: 'Queimadas na Amazônia',
-        subtitle: 'Focos de calor em escala recorde comprometem o maior bioma tropical do planeta.',
+        category: 'Desmatamento',
+        title: 'Amazônia perde milhões de hectares ao longo das últimas décadas',
+        subtitle: 'Imagens de satélite revelam a transformação contínua da floresta e os impactos ambientais associados ao avanço do desmatamento.',
         image: IMAGES.amazoniaDesmatada,
         view: 'view-clima'
     },
     {
         id: 'news-degelo',
-        category: 'Ártico',
-        title: 'Degelo das Calotas Polares',
-        subtitle: 'Geleiras perdem massa em ritmo acelerado e elevam o nível dos oceanos globalmente.',
+        category: 'Aquecimento Global',
+        title: 'Degelo acelera em diversas regiões do planeta',
+        subtitle: 'O recuo de geleiras e calotas polares tornou-se um dos principais indicadores das mudanças climáticas globais.',
         image: IMAGES.degelo,
         view: 'view-clima'
     },
     {
         id: 'news-calor',
-        category: 'Alerta',
-        title: 'Ondas de Calor Extremas',
-        subtitle: 'Temperaturas recordes em cidades costeiras e continentais redefinem zonas de risco humano.',
-        image: IMAGES.incendios,
+        category: 'Eventos Extremos',
+        title: 'Ondas de calor batem recordes históricos em vários continentes',
+        subtitle: 'Temperaturas extremas impactam cidades, sistemas de energia e a qualidade de vida de milhões de pessoas.',
+        image: IMAGES.calorGlobal,
         view: 'view-clima'
     }
 ];

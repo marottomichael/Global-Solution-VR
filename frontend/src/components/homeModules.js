@@ -18,11 +18,13 @@ export function renderHomeModules(container) {
         card.innerHTML = `
             <span class="visual-card__overlay" aria-hidden="true"></span>
             <span class="visual-card__glow" aria-hidden="true"></span>
-            <span class="visual-card__content">
-                <span class="module-card__tag">${mod.tag}</span>
-                <h3>${mod.title}</h3>
-                <p>${mod.description}</p>
-                <span class="module-card__arrow" aria-hidden="true">→</span>
+            <span class="visual-card__content module-card__content">
+                <span class="module-card__panel">
+                    <span class="module-card__tag">${mod.tag}</span>
+                    <h3>${mod.title}</h3>
+                    <p>${mod.description}</p>
+                    <span class="module-card__arrow" aria-hidden="true">→</span>
+                </span>
             </span>
         `;
 

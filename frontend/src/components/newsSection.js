@@ -16,10 +16,12 @@ export function renderNewsSection(container) {
 
         card.innerHTML = `
             <span class="visual-card__overlay visual-card__overlay--news" aria-hidden="true"></span>
+            <span class="visual-card__glow" aria-hidden="true"></span>
             <div class="news-card__body">
                 <span class="news-card__category">${item.category}</span>
                 <h3 class="news-card__title">${item.title}</h3>
                 <p class="news-card__subtitle">${item.subtitle}</p>
+                <span class="news-card__cta" aria-hidden="true">Explorar no MEMORA →</span>
             </div>
         `;
 

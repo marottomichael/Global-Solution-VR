@@ -54,17 +54,17 @@
 }
 
 .brand__logo {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: conic-gradient(from 180deg, var(--color-cyan), var(--color-cosmic-purple), var(--color-space-blue), var(--color-cyan));
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-    animation: brand-pulse 4s ease-in-out infinite;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.45));
+    animation: brand-glow 4s ease-in-out infinite;
 }
 
-@keyframes brand-pulse {
-    0%, 100% { box-shadow: 0 0 16px rgba(0, 212, 255, 0.35); }
-    50% { box-shadow: 0 0 28px rgba(123, 97, 255, 0.5); }
+@keyframes brand-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.4)); }
+    50% { filter: drop-shadow(0 0 18px rgba(123, 97, 255, 0.55)); }
 }
 
 .brand__name {
@@ -270,6 +270,10 @@
     .scenario-grid {
         grid-template-columns: 1fr;
     }
+
+    .impact-counters {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -304,6 +308,10 @@
     .grid-3,
     .grid-4,
     .grid-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-counters {
         grid-template-columns: 1fr;
     }
 }

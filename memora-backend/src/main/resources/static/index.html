@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Orbitron:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-BqwOVrlR.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Dlxkl0j0.css">
+  <script type="module" crossorigin src="/assets/index-CYpUyPHT.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CMU4qqsV.css">
 </head>
 <body>
     <div class="app-shell">
@@ -25,11 +25,12 @@
                 <nav aria-label="Principal">
                     <ul class="nav-menu">
                         <li><button type="button" data-nav-view="view-home" class="is-active">Início</button></li>
+                        <li><button type="button" data-nav-view="view-produto">MEMORA Glass</button></li>
+                        <li><button type="button" data-nav-view="view-painel-espacial">Painel Espacial</button></li>
                         <li><button type="button" data-nav-view="view-clima">Memória Climática</button></li>
                         <li><button type="button" data-nav-view="view-patrimonio">Patrimônio</button></li>
                         <li><button type="button" data-nav-view="view-simulacoes">Simulações</button></li>
                         <li><button type="button" data-nav-view="view-labs">Memora Labs</button></li>
-                        <li><button type="button" data-nav-view="view-produto">Produto</button></li>
                     </ul>
                 </nav>
             </div>
@@ -84,7 +85,7 @@
                         <article class="glass-card about-card reveal-card">
                             <p class="about-card__number">02</p>
                             <h3>A Solução</h3>
-                            <p>Digital twins ambientais com linha do tempo interativa, mapas de transformação e simulações de cenários reais e hipotéticos.</p>
+                            <p>Digital twins ambientais com linha do tempo interativa, mapas de transformação e simulações de cenários reais e hipotéticos. O MEMORA Glass estende essa experiência ao hardware, com visão panorâmica ajustada por comandos de voz e IA.</p>
                         </article>
                         <article class="glass-card about-card reveal-card">
                             <p class="about-card__number">03</p>
@@ -108,9 +109,10 @@
             <section class="dashboard-section section" id="dashboard">
                 <div class="container">
                     <header class="section-header section-header--left">
-                        <p class="section-eyebrow">Painel ambiental</p>
-                        <h2>Métricas globais em tempo real</h2>
-                        <p>Indicadores demonstrativos — integração com <code style="font-family: var(--font-mono); color: var(--color-cyan)">GET /estatisticas</code> na próxima fase.</p>
+                        <p class="section-eyebrow">Space Connect</p>
+                        <h2>Dashboard Espacial da Amazônia</h2>
+                        <p>Monitoramento ambiental com dados satelitais simulados — séries históricas, indicadores atuais e projeções futuras via <code style="font-family: var(--font-mono); color: var(--color-cyan)">GET /dashboard/amazonia</code>.</p>
+                        <button type="button" class="btn btn-primary" data-nav-view="view-painel-espacial" style="margin-top: 1rem">Abrir Painel Espacial</button>
                     </header>
                     <div id="env-dashboard" data-env-dashboard></div>
                     <div id="stats-container" class="stats-wrapper" style="margin-top: 2rem" aria-live="polite"></div>
@@ -147,7 +149,7 @@
 
             <section class="api-strip section">
                 <div class="container glass-card">
-                    <p>API Spring Boot · <code>localhost:8081</code> · Endpoints: <code>/solicitacoes</code> <code>/estatisticas</code> <code>/avaliacoes</code></p>
+                    <p>API Spring Boot · <code>localhost:8081</code> · Endpoints: <code>/dashboard/amazonia</code> <code>/solicitacoes</code> <code>/estatisticas</code> <code>/avaliacoes</code></p>
                 </div>
             </section>
         </div>
@@ -309,6 +311,23 @@
             </div>
         </div>
 
+        <!-- ========== PAINEL ESPACIAL ========== -->
+        <div id="view-painel-espacial" class="view">
+            <div class="module-hero module-hero--satellite">
+                <div class="container">
+                    <div class="module-hero__back">
+                        <button type="button" class="btn btn-ghost" data-nav-view="view-home">← Voltar</button>
+                    </div>
+                    <span class="badge badge--live">Earth Observation</span>
+                    <h1>Dashboard Espacial da Amazônia</h1>
+                    <p>Monitoramento contínuo com dados satelitais simulados — histórico, status atual e cenários futuros.</p>
+                </div>
+            </div>
+            <section class="section container painel-espacial">
+                <div data-painel-espacial aria-live="polite"></div>
+            </section>
+        </div>
+
         <!-- ========== PRODUTO ========== -->
         <div id="view-produto" class="view">
             <div class="module-hero">
@@ -317,7 +336,7 @@
                         <button type="button" class="btn btn-ghost" data-nav-view="view-home">← Voltar</button>
                     </div>
                     <span class="badge badge--purple">Produto exclusivo</span>
-                    <h1>MEMORA Glasses</h1>
+                    <h1>MEMORA Glass</h1>
                     <p>Hardware de imersão sensorial integrado à plataforma, com visão panorâmica ajustada por comandos de voz e inteligência artificial.</p>
                 </div>
             </div>
@@ -330,12 +349,13 @@
             <div class="container">
                 <nav class="footer__links" aria-label="Rodapé">
                     <a href="#" data-nav-view="view-home">Início</a>
+                    <a href="#" data-nav-view="view-produto">MEMORA Glass</a>
+                    <a href="#" data-nav-view="view-painel-espacial">Painel Espacial</a>
                     <a href="#" data-nav-view="view-clima">Memória Climática</a>
                     <a href="#" data-nav-view="view-patrimonio">Patrimônio</a>
                     <a href="#" data-nav-view="view-labs">Labs</a>
-                    <a href="#" data-nav-view="view-produto">Produto</a>
                 </nav>
-                <p>MEMORA · Global Solution · Conscientização climática · porta 8081</p>
+                <p>MEMORA · Global Solution · Conscientização climática</p>
             </div>
         </footer>
     </div>

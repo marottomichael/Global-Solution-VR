@@ -101,6 +101,7 @@ CREATE TABLE IF NOT EXISTS metricas_resultado (
     valor DECIMAL(12, 4) NOT NULL,
     unidade VARCHAR(255),
     descricao VARCHAR(255),
+    ano_referencia INT,
     resultado_id BIGINT NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT fk_metrica_resultado

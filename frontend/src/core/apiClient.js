@@ -6,6 +6,7 @@ export function apiUrl(path) {
 }
 
 export async function request(path, options = {}) {
+    const url = apiUrl(path);
     const config = {
         headers: {
             Accept: 'application/json',
@@ -14,11 +15,21 @@ export async function request(path, options = {}) {
         ...options
     };
 
-    const response = await fetch(apiUrl(path), config);
+    let response;
+    try {
+        response = await fetch(url, config);
+    } catch (cause) {
+        const error = new Error('Não foi possível conectar ao backend.');
+        error.code = 'NETWORK_ERROR';
+        error.url = url;
+        error.cause = cause;
+        throw error;
+    }
 
     if (!response.ok) {
         const error = new Error(`Requisição falhou (${response.status})`);
         error.status = response.status;
+        error.url = url;
         try {
             error.body = await response.json();
         } catch {

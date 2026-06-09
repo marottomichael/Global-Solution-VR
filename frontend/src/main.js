@@ -18,6 +18,7 @@ import { initModuleView } from './components/moduleView.js';
 import { renderNewsSection } from './components/newsSection.js';
 import { renderImpactCounters } from './components/impactCounters.js';
 import { renderProdutoShowcase } from './components/produtoShowcase.js';
+import { initPainelEspacial } from './components/painelEspacial.js';
 import { VIDEOS, IMAGES } from './data/assets.js';
 
 function setupScrollLinks() {
@@ -96,6 +97,8 @@ function init() {
 
     renderProdutoShowcase(document.querySelector('[data-produto-showcase]'));
     observeRevealCards(document.getElementById('view-produto'));
+
+    initPainelEspacial(document.querySelector('[data-painel-espacial]'));
 
     loadEstatisticas();
 }

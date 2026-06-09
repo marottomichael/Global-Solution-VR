@@ -39,6 +39,9 @@ public class MetricaResultado {
 
     private String descricao;
 
+    @Column(name = "ano_referencia")
+    private Integer anoReferencia;
+
     public Long getId() {
         return id;
     }
@@ -85,5 +88,13 @@ public class MetricaResultado {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Integer getAnoReferencia() {
+        return anoReferencia;
+    }
+
+    public void setAnoReferencia(Integer anoReferencia) {
+        this.anoReferencia = anoReferencia;
     }
 }

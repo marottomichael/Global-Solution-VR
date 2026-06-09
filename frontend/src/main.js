@@ -17,6 +17,7 @@ import { setupScrollReveal, observeRevealCards } from './components/scrollReveal
 import { initModuleView } from './components/moduleView.js';
 import { renderNewsSection } from './components/newsSection.js';
 import { renderImpactCounters } from './components/impactCounters.js';
+import { renderProdutoShowcase } from './components/produtoShowcase.js';
 import { VIDEOS, IMAGES } from './data/assets.js';
 
 function setupScrollLinks() {
@@ -92,6 +93,9 @@ function init() {
     renderEnvDashboard(document.querySelector('[data-env-dashboard]'));
 
     ['clima', 'patrimonio', 'simulacoes', 'labs'].forEach(initModuleView);
+
+    renderProdutoShowcase(document.querySelector('[data-produto-showcase]'));
+    observeRevealCards(document.getElementById('view-produto'));
 
     loadEstatisticas();
 }

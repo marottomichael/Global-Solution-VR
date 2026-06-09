@@ -3,7 +3,7 @@
  * Preparado para substituição por respostas da API Spring Boot.
  */
 
-import { IMAGES } from './assets.js';
+import { IMAGES, VIDEOS } from './assets.js';
 
 export const MODULES = {
     clima: {
@@ -244,7 +244,8 @@ export const HOME_MODULES = [
     { id: 'clima', title: 'Memória Climática', description: 'Transformações ambientais via satélite e comparação temporal.', tag: 'Principal', image: IMAGES.amazoniaAntes, view: 'view-clima' },
     { id: 'patrimonio', title: 'Patrimônio Digital', description: 'Reconstrução imersiva de patrimônio cultural ameaçado.', tag: 'Heritage', image: IMAGES.museuNacional, view: 'view-patrimonio' },
     { id: 'simulacoes', title: 'Simulações de Desastres', description: 'Eventos extremos em experiências imersivas educativas.', tag: 'Disaster', image: IMAGES.incendioFlorestal, view: 'view-simulacoes' },
-    { id: 'labs', title: 'Memora Labs', description: 'Cenários hipotéticos — e se o planeta fosse diferente?', tag: 'What-if', image: IMAGES.planetaTerra, view: 'view-labs' }
+    { id: 'labs', title: 'Memora Labs', description: 'Cenários hipotéticos — e se o planeta fosse diferente?', tag: 'What-if', image: IMAGES.planetaTerra, view: 'view-labs' },
+    { id: 'produto', title: 'MEMORA Glass', description: 'Imersão sensorial com visão panorâmica ajustada por comandos de voz e IA.', tag: 'Hardware', video: VIDEOS.memoraProduct, view: 'view-produto' }
 ];
 
 export const ENV_METRICS_DEMO = [

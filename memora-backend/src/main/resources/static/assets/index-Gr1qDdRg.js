@@ -212,24 +212,24 @@ var Yo=Object.defineProperty;var Uo=(i,t,e)=>t in i?Yo(i,t,{enumerable:!0,config
 
         <div class="grid-stats painel-stats reveal-card">
             <article class="stat-card glass-card">
-                <span class="stat-card__label">Cobertura Florestal</span>
-                <span class="stat-card__value">${Bn((n==null?void 0:n.valor)??65,"%")}</span>
-                <span class="stat-card__hint">Referência ${(n==null?void 0:n.ano)??2026}</span>
+                <p class="stat-card__label">Cobertura Florestal</p>
+                <p class="stat-card__value">${Bn((n==null?void 0:n.valor)??65,"%")}</p>
+                <p class="stat-card__hint">Referência ${(n==null?void 0:n.ano)??2026}</p>
             </article>
             <article class="stat-card glass-card">
-                <span class="stat-card__label">Temperatura Média</span>
-                <span class="stat-card__value">${Bn((o==null?void 0:o.valor)??26.8,"°C")}</span>
-                <span class="stat-card__hint">Referência ${(o==null?void 0:o.ano)??2026}</span>
+                <p class="stat-card__label">Temperatura Média</p>
+                <p class="stat-card__value">${Bn((o==null?void 0:o.valor)??26.8,"°C")}</p>
+                <p class="stat-card__hint">Referência ${(o==null?void 0:o.ano)??2026}</p>
             </article>
             <article class="stat-card glass-card">
-                <span class="stat-card__label">Perda Acumulada</span>
-                <span class="stat-card__value">${a}%</span>
-                <span class="stat-card__hint">Desde 1985 (baseline 100%)</span>
+                <p class="stat-card__label">Perda Acumulada</p>
+                <p class="stat-card__value">${a}%</p>
+                <p class="stat-card__hint">Desde 1985 (baseline 100%)</p>
             </article>
             <article class="stat-card glass-card">
-                <span class="stat-card__label">Projeção para 2050</span>
-                <span class="stat-card__value">${He.cobertura}%</span>
-                <span class="stat-card__hint">Cobertura florestal estimada</span>
+                <p class="stat-card__label">Projeção para 2050</p>
+                <p class="stat-card__value">${He.cobertura}%</p>
+                <p class="stat-card__hint">Cobertura florestal estimada</p>
             </article>
         </div>
 

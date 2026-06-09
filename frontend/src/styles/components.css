@@ -1,5 +1,4 @@
-/* Glass cards */
-.glass-card {
+﻿.glass-card {
     background: var(--color-bg-glass);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
@@ -21,7 +20,6 @@
     margin-bottom: var(--space-sm);
 }
 
-/* Visual cards — imagem de fundo + glass */
 .visual-card {
     position: relative;
     overflow: hidden;
@@ -112,7 +110,6 @@
     margin: 0;
 }
 
-/* Module cards (home) */
 .module-card {
     position: relative;
     overflow: hidden;
@@ -193,7 +190,6 @@
     );
 }
 
-/* Scenario cards */
 .scenario-card {
     cursor: pointer;
     text-align: left;
@@ -233,7 +229,6 @@
     margin-top: var(--space-sm);
 }
 
-/* Timeline */
 .timeline {
     padding: var(--space-lg);
 }
@@ -329,7 +324,6 @@
     margin-bottom: var(--space-xs);
 }
 
-/* Map panel */
 .map-panel {
     position: relative;
     aspect-ratio: 16 / 10;
@@ -412,7 +406,6 @@
     line-height: 1.5;
 }
 
-/* Stat cards */
 .stat-card {
     background: var(--color-bg-glass);
     backdrop-filter: var(--glass-blur);
@@ -422,26 +415,32 @@
 }
 
 .stat-card__label {
+    display: block;
     font-family: var(--font-mono);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--color-text-muted);
-    margin-bottom: var(--space-xs);
+    margin: 0 0 var(--space-xs);
+    line-height: 1.35;
 }
 
 .stat-card__value {
+    display: block;
     font-size: 1.85rem;
     font-weight: 600;
     color: var(--color-cyan);
     font-variant-numeric: tabular-nums;
+    margin: 0;
+    line-height: 1.15;
 }
 
 .stat-card__hint {
     display: block;
     font-size: 0.78rem;
     color: var(--color-text-muted);
-    margin-top: var(--space-xs);
+    margin: var(--space-xs) 0 0;
+    line-height: 1.4;
 }
 
 .stat-card__delta {
@@ -457,7 +456,6 @@
     color: var(--color-success);
 }
 
-/* Badge */
 .badge {
     display: inline-flex;
     align-items: center;
@@ -492,7 +490,6 @@
     border-color: rgba(123, 97, 255, 0.3);
 }
 
-/* Labs cards */
 .lab-card {
     cursor: pointer;
     text-align: left;
@@ -512,7 +509,6 @@
     font-size: 0.85rem;
 }
 
-/* Module header */
 .module-hero {
     padding: var(--space-2xl) 0 var(--space-xl);
     border-bottom: 1px solid var(--color-border);
@@ -528,7 +524,6 @@
     margin-bottom: var(--space-sm);
 }
 
-/* Experience panel */
 .experience-panel {
     display: grid;
     gap: var(--space-md);
@@ -548,7 +543,6 @@
     font-size: 0.9rem;
 }
 
-/* Toast & messages */
 .message {
     padding: var(--space-md) var(--space-lg);
     border-radius: var(--radius-md);
@@ -603,7 +597,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Scroll reveal cards */
 .reveal-card {
     opacity: 0;
     transform: translateY(24px);
@@ -615,7 +608,6 @@
     transform: translateY(0);
 }
 
-/* News cards — portal digital */
 .news-card {
     position: relative;
     overflow: hidden;

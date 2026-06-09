@@ -1,8 +1,3 @@
-/**
- * Dados estáticos dos módulos MEMORA.
- * Preparado para substituição por respostas da API Spring Boot.
- */
-
 import { IMAGES, VIDEOS } from './assets.js';
 
 export const MODULES = {

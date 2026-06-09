@@ -1,6 +1,5 @@
-USE global_solution;
+﻿USE global_solution;
 
--- Dados de demonstracao. Execute apos schema.sql em banco vazio ou ajuste IDs se necessario.
 
 INSERT INTO usuarios (id, nome, email, senha, tipo_usuario, data_criacao) VALUES
 (1, 'Ana Silva', 'ana.silva@email.com', '123456', 'VISITANTE', '2026-06-02 18:00:00.000000');
@@ -58,7 +57,6 @@ INSERT INTO metricas_resultado (id, nome, valor, unidade, descricao, resultado_i
 INSERT INTO avaliacoes (id, nota, comentario, data_avaliacao, usuario_id, solicitacao_id) VALUES
 (1, 5, 'Experiencia muito didatica e visualmente impactante', '2026-06-02 18:15:00.000000', 1, 1);
 
--- Dashboard Espacial da Amazonia (Space Connect)
 INSERT INTO usuarios (id, nome, email, senha, tipo_usuario, data_criacao) VALUES
 (99, 'Admin', 'admin@globalsolution.com', 'admin123', 'ADMIN', '2026-06-01 10:00:00.000000')
 ON DUPLICATE KEY UPDATE nome = VALUES(nome);
@@ -94,8 +92,8 @@ INSERT INTO metricas_resultado (id, nome, valor, unidade, descricao, ano_referen
 (103, 'cobertura_florestal', 78.0000, '%', 'Cobertura florestal historica', 2010, 100),
 (104, 'cobertura_florestal', 70.0000, '%', 'Cobertura florestal historica', 2020, 100),
 (105, 'cobertura_florestal', 65.0000, '%', 'Cobertura florestal atual', 2026, 100),
-(106, 'temperatura_media', 24.0000, '°C', 'Temperatura media historica', 1985, 100),
-(107, 'temperatura_media', 24.8000, '°C', 'Temperatura media historica', 2000, 100),
-(108, 'temperatura_media', 25.5000, '°C', 'Temperatura media historica', 2010, 100),
-(109, 'temperatura_media', 26.1000, '°C', 'Temperatura media historica', 2020, 100),
-(110, 'temperatura_media', 26.8000, '°C', 'Temperatura media atual', 2026, 100);
+(106, 'temperatura_media', 24.0000, 'Â°C', 'Temperatura media historica', 1985, 100),
+(107, 'temperatura_media', 24.8000, 'Â°C', 'Temperatura media historica', 2000, 100),
+(108, 'temperatura_media', 25.5000, 'Â°C', 'Temperatura media historica', 2010, 100),
+(109, 'temperatura_media', 26.1000, 'Â°C', 'Temperatura media historica', 2020, 100),
+(110, 'temperatura_media', 26.8000, 'Â°C', 'Temperatura media atual', 2026, 100);

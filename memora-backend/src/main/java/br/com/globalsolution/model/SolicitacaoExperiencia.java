@@ -51,12 +51,12 @@ public class SolicitacaoExperiencia {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "categoria_experiencia", nullable = false)
+    @Column(name = "categoria_experiencia", nullable = false, length = 50, columnDefinition = "VARCHAR(50)")
     private CategoriaExperiencia categoriaExperiencia;
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_temporal", nullable = false)
+    @Column(name = "tipo_temporal", nullable = false, length = 50, columnDefinition = "VARCHAR(50)")
     private TipoTemporal tipoTemporal;
 
     @Column(name = "ano_referencia")
@@ -64,12 +64,12 @@ public class SolicitacaoExperiencia {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "nivel_detalhamento", nullable = false)
+    @Column(name = "nivel_detalhamento", nullable = false, length = 50, columnDefinition = "VARCHAR(50)")
     private NivelDetalhamento nivelDetalhamento;
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50, columnDefinition = "VARCHAR(50)")
     private StatusGeracao status;
 
     @Column(name = "prompt_gerado", columnDefinition = "TEXT")

@@ -1,7 +1,3 @@
-# Global Solution — testes manuais da API
-# Requisitos: aplicação rodando em http://localhost:8081
-# Execute na ordem. Ajuste usuarioId, fontesDadosIds e solicitacaoId conforme as respostas.
-
 @baseUrl = http://localhost:8081
 
 ### 1. Criar usuario

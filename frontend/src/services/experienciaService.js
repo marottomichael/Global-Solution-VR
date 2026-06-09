@@ -1,9 +1,5 @@
 import { request } from '../core/apiClient.js';
 
-/**
- * Integração futura com API Spring Boot.
- * POST /solicitacoes — criar experiência imersiva
- */
 export function criarSolicitacao(payload) {
     return request('/solicitacoes', {
         method: 'POST',

@@ -1,4 +1,4 @@
-.app-shell {
+﻿.app-shell {
     position: relative;
     z-index: 1;
     min-height: 100vh;
@@ -14,7 +14,6 @@
     margin-inline: auto;
 }
 
-/* Navbar fixa */
 .site-header {
     position: fixed;
     top: 0;
@@ -123,7 +122,6 @@
     transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
-/* Views SPA */
 .view {
     display: none;
     padding-top: var(--header-height);

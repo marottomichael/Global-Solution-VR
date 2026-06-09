@@ -1,5 +1,4 @@
-/* Hero landing */
-.hero {
+﻿.hero {
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -113,7 +112,6 @@
     margin-bottom: 2px;
 }
 
-/* About scroll section */
 .about-scroll {
     padding: var(--space-4xl) 0;
     background: linear-gradient(180deg, transparent, rgba(15, 76, 129, 0.08) 50%, transparent);
@@ -135,12 +133,10 @@
     margin-bottom: var(--space-sm);
 }
 
-/* Modules section home */
 .modules-section {
     padding: var(--space-3xl) 0 var(--space-4xl);
 }
 
-/* Dashboard section */
 .dashboard-section {
     padding: var(--space-3xl) 0;
     border-top: 1px solid var(--color-border);
@@ -173,7 +169,6 @@
     opacity: 1;
 }
 
-/* Casos reais */
 .cases-section {
     padding: var(--space-3xl) 0 var(--space-xl);
 }
@@ -279,7 +274,6 @@
     color: var(--color-cyan);
 }
 
-/* Module view workspace */
 .workspace {
     padding: var(--space-xl) 0 var(--space-3xl);
 }
@@ -296,7 +290,6 @@
     opacity: 0.5;
 }
 
-/* Painel Espacial — Space Connect */
 .painel-espacial {
     padding-bottom: var(--space-4xl);
 }
@@ -326,6 +319,36 @@
 
 .painel-stats {
     margin-bottom: var(--space-2xl);
+    align-items: stretch;
+}
+
+.painel-stats .stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.painel-stats .stat-card__label {
+    display: block;
+    width: 100%;
+    min-height: 2.6em;
+    margin: 0 0 var(--space-sm);
+    line-height: 1.35;
+}
+
+.painel-stats .stat-card__value {
+    display: block;
+    width: 100%;
+    margin: 0;
+    line-height: 1.15;
+}
+
+.painel-stats .stat-card__hint {
+    display: block;
+    width: 100%;
+    margin: var(--space-sm) 0 0;
+    line-height: 1.4;
 }
 
 .painel-charts {
@@ -433,7 +456,6 @@
     }
 }
 
-/* API strip (footer integration hint) */
 .api-strip {
     padding: var(--space-2xl) 0;
     font-family: var(--font-mono);
@@ -473,7 +495,6 @@
     }
 }
 
-/* Aba Produto */
 .produto-layout {
     display: flex;
     flex-direction: column;
@@ -557,7 +578,6 @@
     gap: var(--space-md);
 }
 
-/* Carrossel Praça Al-Nur */
 .produto-carousel-wrap {
     display: flex;
     flex-direction: column;

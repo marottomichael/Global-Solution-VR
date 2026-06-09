@@ -1,4 +1,3 @@
-# Valida comunicação com a API MEMORA (porta 8081)
 $base = "http://localhost:8081"
 $endpoints = @(
     @{ Method = "GET"; Path = "/dashboard/amazonia" },

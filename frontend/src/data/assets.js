@@ -1,9 +1,3 @@
-/**
- * Assets locais em /public/images e /public/videos.
- * TODO: adicionar /public/images/ondas-de-calor.jpg para card de ondas de calor (usa Incêndios.jpg como fallback).
- * TODO: adicionar /public/images/brumadinho.jpg para cenário Brumadinho (usa Terremotos.jpg como fallback).
- */
-
 export function assetUrl(folder, filename) {
     return `/${folder}/${encodeURIComponent(filename)}`;
 }

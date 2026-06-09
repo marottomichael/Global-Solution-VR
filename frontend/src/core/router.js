@@ -1,4 +1,4 @@
-const VIEWS = ['view-home', 'view-clima', 'view-patrimonio', 'view-simulacoes', 'view-labs', 'view-produto'];
+const VIEWS = ['view-home', 'view-clima', 'view-patrimonio', 'view-simulacoes', 'view-labs', 'view-painel-espacial', 'view-produto'];
 
 let currentView = 'view-home';
 const listeners = new Set();

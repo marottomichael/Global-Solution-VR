@@ -1,6 +1,5 @@
-USE global_solution;
+﻿USE global_solution;
 
--- Dados de demonstracao. Execute apos schema.sql em banco vazio ou ajuste IDs se necessario.
 
 INSERT INTO usuarios (id, nome, email, senha, tipo_usuario, data_criacao) VALUES
 (1, 'Ana Silva', 'ana.silva@email.com', '123456', 'VISITANTE', '2026-06-02 18:00:00.000000');
@@ -57,3 +56,44 @@ INSERT INTO metricas_resultado (id, nome, valor, unidade, descricao, resultado_i
 
 INSERT INTO avaliacoes (id, nota, comentario, data_avaliacao, usuario_id, solicitacao_id) VALUES
 (1, 5, 'Experiencia muito didatica e visualmente impactante', '2026-06-02 18:15:00.000000', 1, 1);
+
+INSERT INTO usuarios (id, nome, email, senha, tipo_usuario, data_criacao) VALUES
+(99, 'Admin', 'admin@globalsolution.com', 'admin123', 'ADMIN', '2026-06-01 10:00:00.000000')
+ON DUPLICATE KEY UPDATE nome = VALUES(nome);
+
+INSERT INTO localizacoes (id, nome_referencia, latitude, longitude, pais, cidade, descricao) VALUES
+(3, 'Amazonia Legal', -3.4653000, -62.2159000, 'Brasil', 'Manaus', 'Regiao de monitoramento por satelite');
+
+INSERT INTO solicitacoes_experiencia (
+    id, titulo, descricao_usuario, categoria_experiencia, tipo_temporal, ano_referencia,
+    nivel_detalhamento, status, prompt_gerado, data_solicitacao, data_processamento,
+    usuario_id, localizacao_id
+) VALUES
+(100, 'Dashboard Espacial da Amazonia',
+ 'Painel de monitoramento continuo da Amazonia usando dados satelitais.',
+ 'MONITORAMENTO_AMBIENTAL', 'PASSADO', 2026, 'ALTO', 'CONCLUIDA',
+ 'Gerar dashboard de monitoramento ambiental da Amazonia com dados satelitais.',
+ '2026-06-01 10:00:00.000000', '2026-06-01 10:05:00.000000', 99, 3);
+
+INSERT INTO solicitacao_fontes_dados (solicitacao_id, fonte_dados_id) VALUES
+(100, 1);
+
+INSERT INTO resultados_geracao (
+    id, descricao_resultado, narrativa_imersiva, indice_confiabilidade,
+    observacoes_tecnicas, data_criacao, solicitacao_id
+) VALUES
+(100, 'Dashboard de indicadores ambientais da Amazonia com series temporais.',
+ 'Monitoramento historico via dados satelitais simulados.', 91.00,
+ 'Dados coerentes com relatorios INPE/NASA para demonstracao.', '2026-06-01 10:05:00.000000', 100);
+
+INSERT INTO metricas_resultado (id, nome, valor, unidade, descricao, ano_referencia, resultado_id) VALUES
+(101, 'cobertura_florestal', 100.0000, '%', 'Cobertura florestal historica', 1985, 100),
+(102, 'cobertura_florestal', 85.0000, '%', 'Cobertura florestal historica', 2000, 100),
+(103, 'cobertura_florestal', 78.0000, '%', 'Cobertura florestal historica', 2010, 100),
+(104, 'cobertura_florestal', 70.0000, '%', 'Cobertura florestal historica', 2020, 100),
+(105, 'cobertura_florestal', 65.0000, '%', 'Cobertura florestal atual', 2026, 100),
+(106, 'temperatura_media', 24.0000, 'Â°C', 'Temperatura media historica', 1985, 100),
+(107, 'temperatura_media', 24.8000, 'Â°C', 'Temperatura media historica', 2000, 100),
+(108, 'temperatura_media', 25.5000, 'Â°C', 'Temperatura media historica', 2010, 100),
+(109, 'temperatura_media', 26.1000, 'Â°C', 'Temperatura media historica', 2020, 100),
+(110, 'temperatura_media', 26.8000, 'Â°C', 'Temperatura media atual', 2026, 100);

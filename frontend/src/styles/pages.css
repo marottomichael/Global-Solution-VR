@@ -1,5 +1,4 @@
-/* Hero landing */
-.hero {
+﻿.hero {
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -113,7 +112,6 @@
     margin-bottom: 2px;
 }
 
-/* About scroll section */
 .about-scroll {
     padding: var(--space-4xl) 0;
     background: linear-gradient(180deg, transparent, rgba(15, 76, 129, 0.08) 50%, transparent);
@@ -135,12 +133,10 @@
     margin-bottom: var(--space-sm);
 }
 
-/* Modules section home */
 .modules-section {
     padding: var(--space-3xl) 0 var(--space-4xl);
 }
 
-/* Dashboard section */
 .dashboard-section {
     padding: var(--space-3xl) 0;
     border-top: 1px solid var(--color-border);
@@ -173,7 +169,6 @@
     opacity: 1;
 }
 
-/* Casos reais */
 .cases-section {
     padding: var(--space-3xl) 0 var(--space-xl);
 }
@@ -279,7 +274,6 @@
     color: var(--color-cyan);
 }
 
-/* Module view workspace */
 .workspace {
     padding: var(--space-xl) 0 var(--space-3xl);
 }
@@ -296,7 +290,172 @@
     opacity: 0.5;
 }
 
-/* API strip (footer integration hint) */
+.painel-espacial {
+    padding-bottom: var(--space-4xl);
+}
+
+.painel-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.painel-header h2 {
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.painel-header__subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    line-height: 1.6;
+}
+
+.painel-header__desc {
+    margin-top: var(--space-sm);
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    max-width: 65ch;
+}
+
+.painel-stats {
+    margin-bottom: var(--space-2xl);
+    align-items: stretch;
+}
+
+.painel-stats .stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.painel-stats .stat-card__label {
+    display: block;
+    width: 100%;
+    min-height: 2.6em;
+    margin: 0 0 var(--space-sm);
+    line-height: 1.35;
+}
+
+.painel-stats .stat-card__value {
+    display: block;
+    width: 100%;
+    margin: 0;
+    line-height: 1.15;
+}
+
+.painel-stats .stat-card__hint {
+    display: block;
+    width: 100%;
+    margin: var(--space-sm) 0 0;
+    line-height: 1.4;
+}
+
+.painel-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.painel-chart-card {
+    padding: var(--space-lg);
+    min-height: 320px;
+}
+
+.painel-chart-card canvas {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+.painel-projecao {
+    margin-bottom: var(--space-xl);
+    border-color: rgba(123, 97, 255, 0.25);
+}
+
+.painel-projecao h3 {
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.painel-projecao__text {
+    color: var(--color-text-muted);
+    max-width: 70ch;
+    margin-bottom: var(--space-lg);
+    line-height: 1.65;
+}
+
+.painel-projecao__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.painel-projecao__item {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+.painel-projecao__label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.painel-projecao__item strong {
+    font-size: 1.5rem;
+    color: var(--color-cyan);
+}
+
+.painel-projecao__risk {
+    color: #f87171 !important;
+}
+
+.painel-info h3 {
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.painel-info p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 75ch;
+}
+
+.painel-error p {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+.painel-error__hint {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+}
+
+.painel-error__retry {
+    margin-top: var(--space-md);
+}
+
+.module-hero--satellite {
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 212, 255, 0.12), transparent),
+        linear-gradient(180deg, rgba(15, 76, 129, 0.2), transparent);
+}
+
+@media (max-width: 900px) {
+    .painel-charts,
+    .painel-projecao__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .api-strip {
     padding: var(--space-2xl) 0;
     font-family: var(--font-mono);
@@ -336,7 +495,6 @@
     }
 }
 
-/* Aba Produto */
 .produto-layout {
     display: flex;
     flex-direction: column;
@@ -420,7 +578,6 @@
     gap: var(--space-md);
 }
 
-/* Carrossel Praça Al-Nur */
 .produto-carousel-wrap {
     display: flex;
     flex-direction: column;

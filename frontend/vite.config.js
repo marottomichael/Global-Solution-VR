@@ -19,7 +19,8 @@ export default defineConfig(({ mode }) => {
                 '/fontes-dados': { target: apiTarget, changeOrigin: true },
                 '/solicitacoes': { target: apiTarget, changeOrigin: true },
                 '/avaliacoes': { target: apiTarget, changeOrigin: true },
-                '/estatisticas': { target: apiTarget, changeOrigin: true }
+                '/estatisticas': { target: apiTarget, changeOrigin: true },
+                '/dashboard': { target: apiTarget, changeOrigin: true }
             }
         }
     };

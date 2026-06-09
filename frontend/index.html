@@ -24,6 +24,7 @@
                     <ul class="nav-menu">
                         <li><button type="button" data-nav-view="view-home" class="is-active">Início</button></li>
                         <li><button type="button" data-nav-view="view-produto">MEMORA Glass</button></li>
+                        <li><button type="button" data-nav-view="view-painel-espacial">Painel Espacial</button></li>
                         <li><button type="button" data-nav-view="view-clima">Memória Climática</button></li>
                         <li><button type="button" data-nav-view="view-patrimonio">Patrimônio</button></li>
                         <li><button type="button" data-nav-view="view-simulacoes">Simulações</button></li>
@@ -33,7 +34,6 @@
             </div>
         </header>
 
-        <!-- ========== LANDING ========== -->
         <div id="view-home" class="view is-active">
             <section class="hero" id="inicio">
                 <div class="hero__bg" aria-hidden="true">
@@ -106,9 +106,10 @@
             <section class="dashboard-section section" id="dashboard">
                 <div class="container">
                     <header class="section-header section-header--left">
-                        <p class="section-eyebrow">Painel ambiental</p>
-                        <h2>Métricas globais em tempo real</h2>
-                        <p>Indicadores demonstrativos — integração com <code style="font-family: var(--font-mono); color: var(--color-cyan)">GET /estatisticas</code> na próxima fase.</p>
+                        <p class="section-eyebrow">Space Connect</p>
+                        <h2>Dashboard Espacial da Amazônia</h2>
+                        <p>Monitoramento ambiental com dados satelitais simulados — séries históricas, indicadores atuais e projeções futuras via <code style="font-family: var(--font-mono); color: var(--color-cyan)">GET /dashboard/amazonia</code>.</p>
+                        <button type="button" class="btn btn-primary" data-nav-view="view-painel-espacial" style="margin-top: 1rem">Abrir Painel Espacial</button>
                     </header>
                     <div id="env-dashboard" data-env-dashboard></div>
                     <div id="stats-container" class="stats-wrapper" style="margin-top: 2rem" aria-live="polite"></div>
@@ -145,12 +146,11 @@
 
             <section class="api-strip section">
                 <div class="container glass-card">
-                    <p>API Spring Boot · <code>localhost:8081</code> · Endpoints: <code>/solicitacoes</code> <code>/estatisticas</code> <code>/avaliacoes</code></p>
+                    <p>API Spring Boot · <code>localhost:8081</code> · Endpoints: <code>/dashboard/amazonia</code> <code>/solicitacoes</code> <code>/estatisticas</code> <code>/avaliacoes</code></p>
                 </div>
             </section>
         </div>
 
-        <!-- ========== MEMÓRIA CLIMÁTICA ========== -->
         <div id="view-clima" class="view" data-module-root="clima">
             <div class="module-hero">
                 <div class="container">
@@ -196,7 +196,6 @@
             </div>
         </div>
 
-        <!-- ========== PATRIMÔNIO ========== -->
         <div id="view-patrimonio" class="view">
             <div class="module-hero">
                 <div class="container">
@@ -233,7 +232,6 @@
             </div>
         </div>
 
-        <!-- ========== SIMULAÇÕES ========== -->
         <div id="view-simulacoes" class="view">
             <div class="module-hero">
                 <div class="container">
@@ -270,7 +268,6 @@
             </div>
         </div>
 
-        <!-- ========== MEMORA LABS ========== -->
         <div id="view-labs" class="view">
             <div class="module-hero">
                 <div class="container">
@@ -307,7 +304,22 @@
             </div>
         </div>
 
-        <!-- ========== PRODUTO ========== -->
+        <div id="view-painel-espacial" class="view">
+            <div class="module-hero module-hero--satellite">
+                <div class="container">
+                    <div class="module-hero__back">
+                        <button type="button" class="btn btn-ghost" data-nav-view="view-home">← Voltar</button>
+                    </div>
+                    <span class="badge badge--live">Earth Observation</span>
+                    <h1>Dashboard Espacial da Amazônia</h1>
+                    <p>Monitoramento contínuo com dados satelitais simulados — histórico, status atual e cenários futuros.</p>
+                </div>
+            </div>
+            <section class="section container painel-espacial">
+                <div data-painel-espacial aria-live="polite"></div>
+            </section>
+        </div>
+
         <div id="view-produto" class="view">
             <div class="module-hero">
                 <div class="container">
@@ -329,6 +341,7 @@
                 <nav class="footer__links" aria-label="Rodapé">
                     <a href="#" data-nav-view="view-home">Início</a>
                     <a href="#" data-nav-view="view-produto">MEMORA Glass</a>
+                    <a href="#" data-nav-view="view-painel-espacial">Painel Espacial</a>
                     <a href="#" data-nav-view="view-clima">Memória Climática</a>
                     <a href="#" data-nav-view="view-patrimonio">Patrimônio</a>
                     <a href="#" data-nav-view="view-labs">Labs</a>

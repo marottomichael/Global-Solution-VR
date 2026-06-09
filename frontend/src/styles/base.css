@@ -142,6 +142,10 @@ button:active,
     outline-offset: 3px;
 }
 
+[vw].enabled {
+    z-index: 10000;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

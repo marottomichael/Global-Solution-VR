@@ -19,6 +19,7 @@ import { renderNewsSection } from './components/newsSection.js';
 import { renderImpactCounters } from './components/impactCounters.js';
 import { renderProdutoShowcase } from './components/produtoShowcase.js';
 import { initPainelEspacial } from './components/painelEspacial.js';
+import { initVLibras } from './core/vlibras.js';
 import { VIDEOS, IMAGES } from './data/assets.js';
 
 function setupScrollLinks() {
@@ -101,6 +102,7 @@ function init() {
     initPainelEspacial(document.querySelector('[data-painel-espacial]'));
 
     loadEstatisticas();
+    initVLibras();
 }
 
 init();

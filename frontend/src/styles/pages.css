@@ -335,3 +335,369 @@
         width: 100%;
     }
 }
+
+/* Aba Produto */
+.produto-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+}
+
+.produto-viewer {
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.produto-viewer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.produto-viewer__note {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.produto-viewer__stage {
+    position: relative;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    min-height: 470px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.produto-viewer__video {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.produto-viewer__caption {
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    max-width: 72ch;
+    line-height: 1.65;
+}
+
+.produto-features {
+    margin-top: 0;
+}
+
+.produto-feature h3 {
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    font-size: 1.05rem;
+}
+
+.produto-feature p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.produto-integracao {
+    padding: var(--space-xl);
+}
+
+.produto-integracao .section-header {
+    margin-bottom: var(--space-lg);
+}
+
+.produto-integracao__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+/* Carrossel Praça Al-Nur */
+.produto-carousel-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.produto-carousel__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-lg);
+}
+
+.produto-carousel__header h2 {
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.produto-carousel__region {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.produto-carousel__counter {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-cyan);
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: rgba(0, 212, 255, 0.06);
+    white-space: nowrap;
+}
+
+.produto-carousel__viewport {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    min-height: 320px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.produto-carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.produto-carousel__phase {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    z-index: 2;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    background: rgba(7, 20, 38, 0.72);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+}
+
+.produto-carousel__scrubber--overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: var(--space-2xl) var(--space-lg) var(--space-md);
+    background: linear-gradient(
+        to top,
+        rgba(7, 20, 38, 0.92) 0%,
+        rgba(7, 20, 38, 0.72) 55%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.produto-carousel__scrubber-inner {
+    pointer-events: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-md);
+}
+
+.produto-carousel__active-year {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-cyan);
+    letter-spacing: 0.04em;
+    min-width: 3.25rem;
+    text-align: right;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.35);
+}
+
+.produto-carousel__scrubber--overlay .produto-carousel__track {
+    flex: 1;
+}
+
+.produto-carousel__track {
+    position: relative;
+    height: 44px;
+    padding-bottom: 16px;
+    cursor: grab;
+    touch-action: none;
+    outline: none;
+}
+
+.produto-carousel__track.is-dragging {
+    cursor: grabbing;
+}
+
+.produto-carousel__rail {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+}
+
+.produto-carousel__fill {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    transform: translateY(-50%);
+    background: var(--color-cyan);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.45);
+    border-radius: 999px;
+    pointer-events: none;
+    transition: width 0.15s linear;
+}
+
+.produto-carousel__track.is-dragging .produto-carousel__fill {
+    transition: none;
+}
+
+.produto-carousel__thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--color-cyan);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.65);
+    pointer-events: none;
+    transition: left 0.15s linear;
+}
+
+.produto-carousel__track.is-dragging .produto-carousel__thumb {
+    transition: none;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.produto-carousel__markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(50% + 6px);
+    pointer-events: none;
+}
+
+.produto-carousel__marker {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    padding: 0;
+    transform: translate(-50%, -50%);
+}
+
+.produto-carousel__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(7, 20, 38, 0.6);
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.produto-carousel__year {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+}
+
+.produto-carousel__marker.is-active .produto-carousel__dot,
+.produto-carousel__marker:hover .produto-carousel__dot {
+    border-color: var(--color-cyan);
+    background: var(--color-cyan);
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.55);
+    transform: scale(1.15);
+}
+
+.produto-carousel__marker.is-active .produto-carousel__year {
+    color: var(--color-cyan);
+    font-weight: 500;
+}
+
+.produto-carousel__detail {
+    padding: var(--space-xl);
+    animation: detail-in 0.4s var(--ease-out);
+}
+
+.produto-carousel__detail h3 {
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    font-size: 1.15rem;
+}
+
+.produto-carousel__detail p {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    max-width: 72ch;
+}
+
+@media (max-width: 768px) {
+    .produto-viewer__stage {
+        min-height: 240px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .produto-carousel__header {
+        flex-direction: column;
+    }
+
+    .produto-carousel__scrubber-inner {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .produto-carousel__active-year {
+        text-align: left;
+        min-width: 0;
+    }
+
+    .produto-carousel__scrubber--overlay {
+        padding: var(--space-xl) var(--space-md) var(--space-sm);
+    }
+
+    .produto-carousel__viewport {
+        min-height: 220px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .produto-integracao__actions {
+        flex-direction: column;
+    }
+
+    .produto-integracao__actions .btn {
+        width: 100%;
+    }
+}

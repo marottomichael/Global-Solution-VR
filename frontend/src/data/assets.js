@@ -9,7 +9,8 @@ export function assetUrl(folder, filename) {
 }
 
 export const VIDEOS = {
-    earthHero: assetUrl('videos', 'planeta terra visto do espaço.mp4')
+    earthHero: assetUrl('videos', 'planeta terra visto do espaço.mp4'),
+    memoraProduct: assetUrl('videos', 'memora product.mp4')
 };
 
 export const IMAGES = {
@@ -29,7 +30,11 @@ export const IMAGES = {
     palmyra: assetUrl('images', 'Palmyra.jpg'),
     machuPicchu: assetUrl('images', 'Machu Picchu.jpg'),
     terremotos: assetUrl('images', 'Terremotos.jpg'),
-    pompeia: assetUrl('images', 'Pompeia.jpg')
+    pompeia: assetUrl('images', 'Pompeia.jpg'),
+    alepo2008: assetUrl('images', '2008.png'),
+    alepo2010: assetUrl('images', '2010.png'),
+    alepo2025: assetUrl('images', '2025.png'),
+    alepo2050: assetUrl('images', '2050.png')
 };
 
 export const NEWS_ITEMS = [

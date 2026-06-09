@@ -13,9 +13,21 @@ export function renderHomeModules(container) {
         card.type = 'button';
         card.className = 'visual-card module-card reveal-card';
         card.dataset.moduleNav = mod.view;
-        card.style.backgroundImage = `url("${mod.image}")`;
+
+        const mediaHtml = mod.video
+            ? `<video class="module-card__video" src="${mod.video}" muted loop playsinline autoplay aria-hidden="true"></video>`
+            : '';
+
+        if (!mod.video && mod.image) {
+            card.style.backgroundImage = `url("${mod.image}")`;
+        }
+
+        if (mod.video) {
+            card.classList.add('module-card--video');
+        }
 
         card.innerHTML = `
+            ${mediaHtml}
             <span class="visual-card__overlay" aria-hidden="true"></span>
             <span class="visual-card__glow" aria-hidden="true"></span>
             <span class="visual-card__content module-card__content">
@@ -27,6 +39,11 @@ export function renderHomeModules(container) {
                 </span>
             </span>
         `;
+
+        if (mod.video) {
+            const video = card.querySelector('.module-card__video');
+            video?.play().catch(() => {});
+        }
 
         card.addEventListener('click', () => navigateTo(mod.view));
         container.appendChild(card);

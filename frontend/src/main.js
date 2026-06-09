@@ -18,6 +18,7 @@ import { initModuleView } from './components/moduleView.js';
 import { renderNewsSection } from './components/newsSection.js';
 import { renderImpactCounters } from './components/impactCounters.js';
 import { renderProdutoShowcase } from './components/produtoShowcase.js';
+import { initVLibras } from './core/vlibras.js';
 import { VIDEOS, IMAGES } from './data/assets.js';
 
 function setupScrollLinks() {
@@ -98,6 +99,7 @@ function init() {
     observeRevealCards(document.getElementById('view-produto'));
 
     loadEstatisticas();
+    initVLibras();
 }
 
 init();
